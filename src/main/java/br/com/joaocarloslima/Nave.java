@@ -17,12 +17,11 @@ public class Nave extends Asset {
         setImagem(imagem);
     }
 
-    /** Cria e retorna um novo tiro saindo da nave, para cima, velocidade 10. */
+
     public Tiro atirar(int poder) {
         return new Tiro(getX(), getY(), 10, Direcao.CIMA, poder);
     }
 
-    /** Move normalmente, mas impede a nave de sair da tela. */
     @Override
     public void mover() {
         super.mover();

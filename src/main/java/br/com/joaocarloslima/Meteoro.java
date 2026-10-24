@@ -12,15 +12,14 @@ public class Meteoro extends Asset {
     public Meteoro(int x, int y, int velocidade, Direcao direcao) {
         super(x, y, velocidade, direcao);
 
-        this.tamanho = new Random().nextInt(8) + 1; // 1 a 8
-        this.poder = tamanho;                        // poder = tamanho
-
+        this.tamanho = new Random().nextInt(8) + 1;
+        this.poder = tamanho;
         String path = "images/meteoro/meteoro" + tamanho + ".png";
         ImageView imagem = new ImageView(App.class.getResource(path).toString());
         setImagem(imagem);
     }
 
-    /** Subtrai do poder do meteoro o poder do tiro que o atingiu. */
+
     public void tomarTiro(Tiro tiro) {
         poder -= tiro.getPoder();
     }

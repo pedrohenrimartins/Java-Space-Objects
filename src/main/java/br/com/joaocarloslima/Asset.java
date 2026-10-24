@@ -17,7 +17,7 @@ public abstract class Asset {
         this.direcao = direcao;
     }
 
-    /** Soma a velocidade na direção em que o objeto está apontando. (0,0) = canto superior esquerdo. */
+
     public void mover() {
         switch (direcao) {
             case CIMA:
@@ -36,7 +36,7 @@ public abstract class Asset {
         atualizarImagem();
     }
 
-    /** Verifica se este asset ocupa o mesmo espaço que outro (usa o tamanho real da imagem). */
+
     public boolean colidiuCom(Asset asset) {
         return x < asset.getX() + asset.getLargura() &&
                 x + getLargura() > asset.getX() &&
@@ -44,7 +44,7 @@ public abstract class Asset {
                 y + getAltura() > asset.getY();
     }
 
-    /** Largura da imagem (50 se ainda não houver imagem). */
+
     public int getLargura() {
         if (imagem != null && imagem.getBoundsInLocal().getWidth() > 0) {
             return (int) imagem.getBoundsInLocal().getWidth();
@@ -52,7 +52,7 @@ public abstract class Asset {
         return 50;
     }
 
-    /** Altura da imagem (50 se ainda não houver imagem). */
+
     public int getAltura() {
         if (imagem != null && imagem.getBoundsInLocal().getHeight() > 0) {
             return (int) imagem.getBoundsInLocal().getHeight();
@@ -60,7 +60,7 @@ public abstract class Asset {
         return 50;
     }
 
-    /** Mantém o ImageView sincronizado com a posição lógica. */
+
     protected void atualizarImagem() {
         if (imagem != null) {
             imagem.setLayoutX(x);

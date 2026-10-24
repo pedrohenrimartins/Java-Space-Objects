@@ -66,10 +66,10 @@ public class Controller implements Initializable {
             pane.getChildren().add(meteoro.getImagem());
         }
 
-        // itera sobre uma cópia para poder remover da lista original
+
         for (Asset asset : new ArrayList<>(jogo.assets)) {
-            if (asset instanceof Nave) continue;               // a nave só move pelo teclado
-            if (!jogo.assets.contains(asset)) continue;        // já removido neste frame
+            if (asset instanceof Nave) continue;
+            if (!jogo.assets.contains(asset)) continue;
 
             asset.mover();
 
@@ -101,7 +101,7 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // troca a imagem fixa do FXML pela imagem da nave do jogo
+
         if (imgNave != null) {
             pane.getChildren().remove(imgNave);
         }

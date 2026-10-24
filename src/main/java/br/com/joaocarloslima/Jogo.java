@@ -21,14 +21,14 @@ public class Jogo {
         assets.add(nave);
     }
 
-    /** Aciona o tiro da nave (poder = nível atual) e adiciona ao array de assets. */
+
     public Tiro atirar() {
         Tiro tiro = nave.atirar(nivel);
         assets.add(tiro);
         return tiro;
     }
 
-    /** Instancia um meteoro em posição x aleatória no topo da tela e adiciona ao array. */
+
     public Meteoro criarMeteoro() {
         int x = random.nextInt(LARGURA_TELA - 50 + 1); // 0 a 590
         int velocidade = random.nextInt(3) + 1;        // 1 a 3
@@ -37,7 +37,7 @@ public class Jogo {
         return meteoro;
     }
 
-    /** +1 ponto; sobe de nível a cada 10 pontos, limitado ao nível 4. */
+
     public void pontuar() {
         pontos++;
         if (pontos % PONTOS_POR_NIVEL == 0 && nivel < NIVEL_MAXIMO) {
